@@ -1,0 +1,19 @@
+{
+  "name": "timeandreturn",
+  "version": "1.0.0",
+  "description": "Get the elapsed time of a block of code and return the result of that block of code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "utility",
+    "timeit",
+    "timing",
+    "perf",
+    "performance",
+    "profiling"
+  ],
+  "author": "Justin Lovinger",
+  "license": "MIT"
+}
