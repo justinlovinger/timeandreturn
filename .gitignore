@@ -1,0 +1,8 @@
+# Ignore compiled output
+dist/
+
+# Ignore nyc side effects
+.nyc_output/
+
+# Ignore insalled modules
+node_modules/
