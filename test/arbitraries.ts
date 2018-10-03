@@ -13,7 +13,7 @@ export const arbitraryBlock = arbitraryBlockAndReturnValue
 
 export const arbitraryAsyncBlockAndReturnValue = anythingExceptNaN
     .map(returnValue => [
-        () => new Promise((resolve => setTimeout(() => resolve(returnValue), 1))),
+        () => new Promise(resolve => setTimeout(() => resolve(returnValue), 1)),
         returnValue]);
 export const arbitraryAsyncBlock = arbitraryAsyncBlockAndReturnValue
     .map(tup => tup[0]);
