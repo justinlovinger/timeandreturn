@@ -1,15 +1,25 @@
 import now from 'performance-now';
 
+import { formatBlockTime } from './format';
+
 
 /**
  * Call callback with the time taken to run block, and return the result of block
  * 
- * Elapsed time is given in milliseconds
+ * If block returns a Promise, call callback after promise resolves.
+ * 
+ * Elapsed time is given in milliseconds.
  */
 export function timeAndReturn<T>(callback: (elapsedTime: number) => void, block: () => T): T {
     const startTime = now();
     const returnValue = block();
-    callback(now() - startTime);
+    if (returnValue instanceof Promise) {
+        returnValue.then(() => {
+            callback(now() - startTime);
+        });
+    } else {
+        callback(now() - startTime);
+    }
 
     return returnValue;
 }
@@ -18,24 +28,5 @@ export function timeAndReturn<T>(callback: (elapsedTime: number) => void, block:
  * Log the time taken to run block, and return the result of block
  */
 export function logTimeAndReturn<T>(block: () => T): T {
-    return timeAndReturn(consoleLogger(block), block);
-}
-
-function consoleLogger(block: () => any): (elapsedTime: number) => void {
-    return elapsedTime => console.log(`"${formatFunctionDefinition(50, block.toString())}" ran for ${elapsedTime / 1000} seconds`);
-}
-
-function formatFunctionDefinition(maxLength: number, functionDefinition: string): string {
-    let oneLineDefinition = functionDefinition.toString()
-        // Strip line breaks and tabs
-        .replace(/\r?\n|\r|\t/g, ' ')
-        // Squash spaces
-        .replace(/ +/g, ' ')
-
-    // Slice and append ... if too long
-    if (oneLineDefinition.length > maxLength) {
-        return oneLineDefinition.slice(0, maxLength - 4) + ' ...'
-    } else {
-        return oneLineDefinition;
-    }
+    return timeAndReturn((elapsedTime) => console.log(formatBlockTime(block, elapsedTime)), block);
 }
