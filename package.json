@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Get the elapsed time of a block of code and return the result of that block of code.",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "nyc mocha --require ts-node/register --watch-extensions ts,tsx \"./test/**/*.{ts,tsx}\"",
     "build": "tsc"
