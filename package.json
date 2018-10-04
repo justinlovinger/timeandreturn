@@ -24,7 +24,7 @@
     "performance",
     "profiling"
   ],
-  "author": "Justin Lovinger",
+  "author": "Justin Lovinger <npm@justinlovinger.com> (https://twitter.com/JustinLovinger)",
   "license": "MIT",
   "dependencies": {
     "performance-now": "^2.1.0"
