@@ -16,6 +16,10 @@
       "src"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinLovinger/timeandreturn.git"
+  },
   "keywords": [
     "utility",
     "timeit",
@@ -24,8 +28,12 @@
     "performance",
     "profiling"
   ],
+  "bugs": {
+    "url": "https://github.com/JustinLovinger/timeandreturn/issues"
+  },
   "author": "Justin Lovinger <npm@justinlovinger.com> (https://twitter.com/JustinLovinger)",
   "license": "MIT",
+  "homepage": "https://github.com/JustinLovinger/timeandreturn#readme",
   "dependencies": {
     "performance-now": "^2.1.0"
   },
