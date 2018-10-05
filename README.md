@@ -1,7 +1,14 @@
+[![Build Status](https://travis-ci.org/JustinLovinger/timeandreturn.svg?branch=master)](https://travis-ci.org/JustinLovinger/timeandreturn)
+[![Coverage Status](https://coveralls.io/repos/github/JustinLovinger/timeandreturn/badge.svg?branch=master)](https://coveralls.io/github/JustinLovinger/timeandreturn?branch=master)
+[![npm version](https://badge.fury.io/js/timeandreturn.svg)](https://badge.fury.io/js/timeandreturn)
+
+
+# timeandreturn
+
 A simple utility library to get the elapsed time of a block of code.
 Designed to easily drop into existing code with minimal changes, for easy performance profiling.
 
-# Installation
+## Installation
 
 via [npm](https://github.com/npm/npm)
 
