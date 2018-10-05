@@ -6,7 +6,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "nyc mocha --require ts-node/register --watch-extensions ts,tsx \"./test/**/*.{ts,tsx}\"",
-    "build": "tsc"
+    "build": "tsc",
+    "reportcoverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "extension": [
@@ -44,6 +45,7 @@
     "@types/proxyquire": "^1.3.28",
     "@types/sinon": "^5.0.2",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "fast-check": "^1.5.0",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
